@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Verification</title>
+    <!-- Bootstrap CSS (optional for styling) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: white;
+            padding: 0;
+            margin: 0;
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .black_bg {
+            background: black;
+            width: 100%;
+        }
+
+        .spinner-container,
+        #msgContainer {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="m-0">
+        <!-- Hero Area Start -->
+        <nav class="navbar navbar-dark black_bg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="logo.png" alt="Logo" width="80%" class="d-inline-block align-text-top">
+                </a>
+            </div>
+        </nav>
+        <section id="home" class="black_bg">
+            <div id="particles-js"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 d-flex align-items-center">
+                        <div class="spinner-grow bg-light" style="width: 3rem; height: 3rem;" role="status"></div>
+                        <div id="msgContainer">
+                            <h1>Thank You!</h1>
+                            <h2>For Your Confirmation</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="banner-images">
+                            <img src="banner.jpg" alt="Banner Image" width="100%" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js (required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Show spinner on page reload
+            var spinnerContainer = document.querySelector('.spinner-container');
+            var msgContainer = document.querySelector('#msgContainer');
+
+            if (spinnerContainer && msgContainer) {
+                spinnerContainer.style.display = 'block';
+
+                // Wait for 3 seconds and then show the message
+                setTimeout(function () {
+                    spinnerContainer.style.display = 'none';
+                    msgContainer.style.display = 'block';
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+
+</html>
